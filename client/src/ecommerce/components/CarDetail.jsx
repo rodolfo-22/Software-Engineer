@@ -41,9 +41,9 @@ const CarDetail = ({ cars }) => {
   };
 
   return (
-    <div className="p-4">
-      <h2 className="text-2xl font-bold mb-4">{car.model}</h2>
-      <div className="relative w-full" style={{ height: "70vh" }}>
+    <div className="p-4 flex flex-col lg:flex-row">
+      <div className="relative lg:w-4/5 w-full" style={{ height: "90vh" }}>
+        <h2 className="text-2xl font-bold mb-4">{car.model}</h2>
         <img
           src={car.images[currentImageIndex]}
           alt={`${car.model}`}
@@ -53,18 +53,18 @@ const CarDetail = ({ cars }) => {
           onClick={handlePrevImage}
           className="absolute left-2 top-1/2 transform -translate-y-1/2 bg-gray-800 text-white p-2 rounded-full"
         >
-          Prev
+          &#10094;
         </button>
         <button
           onClick={handleNextImage}
           className="absolute right-2 top-1/2 transform -translate-y-1/2 bg-gray-800 text-white p-2 rounded-full"
         >
-          Next
+          &#10095;
         </button>
       </div>
-      <div className="flex justify-between items-center mt-4">
+      <div className="lg:w-1/5 w-full mt-6 lg:mt-0 lg:ml-6 flex flex-col justify-between">
         <div>
-          <h3 className="text-xl font-semibold mb-2">Detalles:</h3>
+          <h3 className="text-2xl font-bold mb-4">Detalles:</h3>
           <p>
             Año: <span className="font-medium">{car.year}</span>
           </p>
@@ -77,13 +77,14 @@ const CarDetail = ({ cars }) => {
         </div>
         <button
           onClick={handleQuoteVehicle}
-          className="bg-blue-600 text-white p-2 rounded-md hover:bg-blue-700 transition duration-200"
+          className="bg-blue-600 text-white p-2 rounded-md hover:bg-blue-700 transition duration-200 mt-4 lg:mt-6"
         >
           Cotizar Vehículo
         </button>
       </div>
     </div>
   );
+
 };
 
 export default CarDetail;

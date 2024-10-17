@@ -16,11 +16,11 @@ const CarListAdmin = ({ cars, deleteCar }) => {
         </thead>
         <tbody>
           {cars.map((car) => (
-            <tr key={car.id}>
+            <tr key={car.id} className="text-center">
               <td className="border px-4 py-2">{car.model}</td>
               <td className="border px-4 py-2">{car.year}</td>
-              <td className="border px-4 py-2">${car.price}</td>
-              <td className="border px-4 py-2 flex space-x-2">
+              <td className="border px-4 py-2">{car.price}</td>
+              <td className="border px-4 py-2 flex justify-center items-center space-x-2">
                 <Link
                   to={`/edit-car/${car.id}`}
                   className="bg-blue-500 text-white px-2 py-1 rounded-md hover:bg-blue-600"
